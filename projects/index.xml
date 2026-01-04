@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on Yujia (Ada) Shi</title>
+    <link>https://adashiyj.github.io/projects/</link>
+    <description>Recent content in Projects on Yujia (Ada) Shi</description>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://adashiyj.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🔍 ASCoR Supervisor Finder App</title>
+      <link>https://adashiyj.github.io/projects/project2/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://adashiyj.github.io/projects/project2/</guid>
+      <description>&lt;script&gt;
+  window.location.href = &#34;https://ascor-supervisor-finder.streamlit.app/&#34;;
+&lt;/script&gt;</description>
+    </item>
+    <item>
+      <title>Robots and Social Influence</title>
+      <link>https://adashiyj.github.io/projects/project1/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://adashiyj.github.io/projects/project1/</guid>
+      <description>I followed this project for my master’s internship, which aimed to investigate whether social robots, acting as exemplars, can influence people’s assessments and evaluations.</description>
+    </item>
+  </channel>
+</rss>

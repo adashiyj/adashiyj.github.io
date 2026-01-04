@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Back to Basics: Learning Python from Scratch – Part 1 | Yujia (Ada) Shi</title>
+<meta name="keywords" content="">
+<meta name="description" content="Main topics of this blog: data types, loops and conditional statements, and functions and methods.">
+<meta name="author" content="Ada Shi">
+<link rel="canonical" href="https://adashiyj.github.io/blogs/blog3/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1e6f6b9bb4d46b673a3a01d5a6d78d7600d56643a59c30bf80e76c0a7531c3eb.css" integrity="sha256-Hm9rm7TUa2c6OgHVpteNdgDVZkOlnDC/gOdsCnUxw&#43;s=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://adashiyj.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://adashiyj.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://adashiyj.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://adashiyj.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://adashiyj.github.io/blogs/blog3/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<link href="/dist/css/lightbox.min.css" rel="stylesheet">
+<script src="/dist/js/lightbox.min.js"></script><meta property="og:url" content="https://adashiyj.github.io/blogs/blog3/">
+  <meta property="og:site_name" content="Yujia (Ada) Shi">
+  <meta property="og:title" content="Back to Basics: Learning Python from Scratch – Part 1">
+  <meta property="og:description" content="Main topics of this blog: data types, loops and conditional statements, and functions and methods.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blogs">
+    <meta property="article:published_time" content="2025-11-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-09T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Back to Basics: Learning Python from Scratch – Part 1">
+<meta name="twitter:description" content="Main topics of this blog: data types, loops and conditional statements, and functions and methods.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://adashiyj.github.io/blogs/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Back to Basics: Learning Python from Scratch – Part 1",
+      "item": "https://adashiyj.github.io/blogs/blog3/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Back to Basics: Learning Python from Scratch – Part 1",
+  "name": "Back to Basics: Learning Python from Scratch – Part 1",
+  "description": "Main topics of this blog: data types, loops and conditional statements, and functions and methods.",
+  "keywords": [
+    
+  ],
+  "articleBody": "After 2 Years Using Python, I Decided to Relearn It from Scratch I’ve been using Python for almost two years in course assignments and research projects. Coming from a non-technical background, I often felt I knew some programming but not enough, even after finishing a minor in Computational Communication Science and several master’s-level programming courses designed for social and behavioral sciences students.\nCurrently, I’m taking the Big Data and Automated Content Analysis 1 (BDACA1) course, taught by Dr. Anne Kroon. In today’s GPT era, programming feels more accessible than ever, but many students have also become overly reliant on AI tools for their assignments. Personally, I’m not against using these tools. They’ve helped me debug errors and understand others’ code much faster, but I’ve noticed they can make us less motivated to truly learn what’s happening behind the scenes. “Vibe coding” might be trendy, but I still believe beginners should take time to understand the backbone of their code.\nBecause of my busy master’s schedule, this blog series might not be super polished or deeply technical, but I’ll do my best to explain things intuitively. I hope it helps classmates and anyone interested in Python while also strengthening my own understanding of this powerful yet approachable language.\nFinally, a big Thank You to Dr. Anne Kroon and the other professors who developed the BDACA course for their guidance and inspiration. The blog will follow the course content, with proper citations, of course. Stay tuned!\nData types An overview of the most common data types in Python\nType Examples Text str Numeric int, float Sequence list, tuple Mapping dict Set set Boolean bool Function to check data type: type()\nIt is very intuitive to understand int and float, so I’ll only give examples and explain the remaining data types.\nStrings (str) my_text = \"Hello world.\" next_text = 'It is fun to learn Python.' print(type(my_text)) # Check the data type print(type(next_text)) # Save as above Both \" and ' can be used to denote strings. If the apostrophe character is part of the string, use \":\nexample = \"It's fun to learn Python.\" Boolean (bool) a = True b = False print(type(a)) # Check the data type print(type(b)) # Same as above # Note that type() function only takes 1 argument, call it separately for each object you want to check Set (set) It’s a collection of unique items.\nfruit = {\"apple\", \"banana\", \"cherry\"} print(type(fruit)) # Check the data type You can try to assign the same item multiple times to a set, but the printed results only the item once.\n# Example fruit = {\"apple\", \"apple\", \"banana\", \"cherry\"} print(fruit) You can turn a list into a set:\nmy_list = [1, 2, 3, 4, 5, 1, 3, 3, 1] my_set = set(my_list) print(my_set) # Output: {1, 2, 3, 4, 5} More examples of how you can play around with set:\ns1 = {1, 3, 1, 88, 66} s2 = {8, 6, 20, 7, 66} s1.union(s2) # Output: {1, 3, 6, 7, 8, 20, 66, 88} s1.intersection(s2) # Output: {66} List (list) You can have a list of strings/integers/floats, or a mix of them.\ntravel_list = [\"Tokyo\", \"Paris\", \"Beijing\", \"New York\"] age_list = [22, 21, 25, 23] random_list = [\"Tony\", 22, 8.5, \"hello\"] Items in a list stay in a fixed order. So you can retrieve specific items by:\ntravel_list[0] # Get the first entry which is \"Tokyo\" travel_list[:1] # Same output as above (stop at and not include the second entry) travel_list[-1] # Get the last entry which is \"New York\" travel_list[1:3] # Start and include from the second entry and stop and not include the fourth entry (so \"Paris\", \"Beijing\") List items in Python are indexed, and the first item has index [0] (which is different from R).\nIn the code above, travel_list[1:3] used the slicing operation to extract multiple items in a list at once. Note that this operation works for strings and tuples. Set do not support slicing because they are unordered, and dictionaries cannot be sliced either as they have the key functionality (Python101).\nSuppose there is a list named n, you can slice the list as:\nn[start:stop] # Elements from start to 'stop - 1' n[start:] # Elements from start to the end of the list n[:stop] # Elements from the beginning to 'stop - 1' n[:] # Copy of the whole list (alternative: list.copy()) Note: When slicing, the stop point of the slice is not included.\nThere are two ways to add item(s) to a list.\nExample 1 shows how you can extend a list by using the .extend() method:\nmy_first_list = [\"one\", \"two\", \"three\"] my_second_list = [\"four\", \"five\"] my_first_list.extend(my_second_list) print(my_first_list) # Output: ['one', 'two', 'three', 'four', 'five'] Example 2 shows how you can append a list by using the .append() method:\nmy_first_list = [\"one\", \"two\", \"three\"] my_second_list = [\"four\", \"five\"] my_first_list.append(my_second_list) print(my_first_list) # Output: ['one', 'two', 'three', ['four', 'five']] The major difference between these two list methods is that .extend() adds each item of an iterable to the list, whereas .append() adds a single item or any object.\nReminder: don’t name your list list.\nDictionary (dict) A collection of paired keys and values. Duplicates are not allowed.\nNote: In Python 3.6 and earlier versions, dictionaries are unordered. However, starting from Python version 3.7, dictionaries are ordered.\nage_dict = {'Zeus': None, 'Denis': 99, 'Alice': 18, 'Rebecca' : 20} print(age_dict) # Print all keys and their values print(age_dict[\"Zeus\"]) # Print the value (age) of Zeus Similar to list, the values in dictionary items can be of any data type:\nrandom_dict = { \"brand\": \"Coca-Cola\", \"diet\": False, \"year\": 2025, \"colors\": [\"red\", \"while\"] } An example showing how you can add a key to a dictionary:\nage_dict = {'Zeus': None, 'Denis': 99, 'Alice': 18, 'Rebecca' : 20} age_dict['Liam'] = 44 print(age_dict) # Output: {'Zeus': None, 'Denis': 99, 'Alice': 18, 'Rebecca': 20, 'Liam': 44} You can also change the value of an existing key:\nage_dict = {'Zeus': None, 'Denis': 99, 'Alice': 18, 'Rebecca' : 20} age_dict['Alice'] = 19 print(age_dict) # Output: {'Zeus': None, 'Denis': 99, 'Alice': 19, 'Rebecca': 20} Tuple (tuple) Similar to list but it’s immutable (i.e., cannot be changed).\ngrades = (8, 8, 7.5, 7, 9) Bonus sections (np.arrary and defaultdict) np.arrary A list-like datatype provided by the numpy package optimized for efficient mathematical operations (from the slides by Dr. Anne Kroon for the BDACA1). It allows for efficient storage and manipulation of numerical data, making it essential for scientific and mathematical computing - cruicial for performing vectorized operations (Datacamp).\nSome examples from the Datacamp:\nimport numpy as np # Basic Array Creation arr1 = np.array([1, 2, 3, 4, 5]) # Create a one-dimensional NumPy array # Multi-dimensional Array arr2 = np.array([[1, 2, 3], [4, 5, 6]]) # Create a two-dimensional array from a nested list, effectively forming a matrix # Array with Specified Data Type arr3 = np.array([1.5, 2.5, 3.5], dtype=np.int32) # Create a one-dimensional array converting floats to integers # Using 'ndmin' to Add Dimensions arr = np.array([1, 2, 3], ndmin=2) # Create a two-dimensional array defaultdict A dictionary that does not raise an error but returns the “empty” value of its datatype (0 for int, \"\" for str) if you try access a non-existing key (from the slides by Dr. Anne Kroon for the BDACA1). It saves you from manually checking for missing keys and avoid KeyError.\nThis example from GeeksforGeeks shows how a defaultdict automatically creates missing keys with a default empty list:\nfrom collections import defaultdict d = defaultdict(list) # Define the data type here d['fruits'].append('apple') d['vegetables'].append('carrot') print(d) # Output: defaultdict(",
+  "wordCount" : "2497",
+  "inLanguage": "en",
+  "datePublished": "2025-11-09T00:00:00Z",
+  "dateModified": "2025-11-09T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Ada Shi"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://adashiyj.github.io/blogs/blog3/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yujia (Ada) Shi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://adashiyj.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://adashiyj.github.io/" accesskey="h" title="Ada Shi">
+                <img src="https://adashiyj.github.io/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Ada Shi</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://adashiyj.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://adashiyj.github.io/blogs/" title="Blogs">
+                    <span>Blogs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://adashiyj.github.io/miscellaneous/" title="Miscellaneous">
+                    <span>Miscellaneous</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Back to Basics: Learning Python from Scratch – Part 1
+    </h1>
+    <div class="post-meta"><span title='2025-11-09 00:00:00 +0000 UTC'>November 2025</span>&nbsp;&middot;&nbsp;Ada Shi
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#after-2-years-using-python-i-decided-to-relearn-it-from-scratch">After 2 Years Using Python, I Decided to Relearn It from Scratch</a></li>
+    <li><a href="#data-types">Data types</a>
+      <ul>
+        <li><a href="#strings-str">Strings (<code>str</code>)</a></li>
+        <li><a href="#boolean-bool">Boolean (<code>bool</code>)</a></li>
+        <li><a href="#set-set">Set (<code>set</code>)</a></li>
+        <li><a href="#list-list">List (<code>list</code>)</a></li>
+        <li><a href="#dictionary-dict">Dictionary (<code>dict</code>)</a></li>
+        <li><a href="#tuple-tuple">Tuple (<code>tuple</code>)</a></li>
+        <li><a href="#bonus-sections-nparrary-and-defaultdict">Bonus sections (<code>np.arrary</code> and <code>defaultdict</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#loops-and-conditional-statements">Loops and conditional statements</a>
+      <ul>
+        <li><a href="#for-loops"><code>for</code>-Loops</a></li>
+        <li><a href="#bonus-list-comprehensions">Bonus: List comprehensions</a></li>
+        <li><a href="#while-loops"><code>while</code>-Loops</a></li>
+        <li><a href="#ifelifelse-statements"><code>if</code>/<code>elif</code>/<code>else</code>-Statements</a></li>
+        <li><a href="#tryexcept-statements">&rsquo;try&rsquo;/&rsquo;except&rsquo;-Statements</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions-and-methods">Functions and methods</a>
+      <ul>
+        <li><a href="#built-in-functions">Built-in functions</a></li>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#define-your-own-functions">Define your own functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="after-2-years-using-python-i-decided-to-relearn-it-from-scratch">After 2 Years Using Python, I Decided to Relearn It from Scratch<a hidden class="anchor" aria-hidden="true" href="#after-2-years-using-python-i-decided-to-relearn-it-from-scratch">#</a></h2>
+<p>I’ve been using Python for almost two years in course assignments and research projects. Coming from a non-technical background, I often felt I knew some programming but not enough, even after finishing a minor in Computational Communication Science and several master’s-level programming courses designed for social and behavioral sciences students.</p>
+<p>Currently, I’m taking the Big Data and Automated Content Analysis 1 (BDACA1) course, taught by Dr. Anne Kroon. In today’s GPT era, programming feels more accessible than ever, but many students have also become overly reliant on AI tools for their assignments. Personally, I’m not against using these tools. They’ve helped me debug errors and understand others’ code much faster, but I’ve noticed they can make us less motivated to truly learn what’s happening behind the scenes. “Vibe coding” might be trendy, but I still believe beginners should take time to understand the backbone of their code.</p>
+<p>Because of my busy master’s schedule, this blog series might not be super polished or deeply technical, but I’ll do my best to explain things intuitively. I hope it helps classmates and anyone interested in Python while also strengthening my own understanding of this powerful yet approachable language.</p>
+<p>Finally, a big Thank You to Dr. Anne Kroon and the other professors who developed the BDACA course for their guidance and inspiration. The blog will follow the course content, with proper citations, of course. Stay tuned!</p>
+<h2 id="data-types">Data types<a hidden class="anchor" aria-hidden="true" href="#data-types">#</a></h2>
+<p><strong>An overview of the most common data types in Python</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Text</td>
+          <td><code>str</code></td>
+      </tr>
+      <tr>
+          <td>Numeric</td>
+          <td><code>int</code>, <code>float</code></td>
+      </tr>
+      <tr>
+          <td>Sequence</td>
+          <td><code>list</code>, <code>tuple</code></td>
+      </tr>
+      <tr>
+          <td>Mapping</td>
+          <td><code>dict</code></td>
+      </tr>
+      <tr>
+          <td>Set</td>
+          <td><code>set</code></td>
+      </tr>
+      <tr>
+          <td>Boolean</td>
+          <td><code>bool</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>Function to check data type: <code>type()</code></p>
+<p>It is very intuitive to understand <code>int</code> and <code>float</code>, so I&rsquo;ll only give examples and explain the remaining data types.</p>
+<h3 id="strings-str">Strings (<code>str</code>)<a hidden class="anchor" aria-hidden="true" href="#strings-str">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_text = <span style="color:#a50">&#34;Hello world.&#34;</span>
+</span></span><span style="display:flex;"><span>next_text = <span style="color:#a50">&#39;It is fun to learn Python.&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(<span style="color:#0aa">type</span>(my_text)) <span style="color:#aaa;font-style:italic"># Check the data type</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(<span style="color:#0aa">type</span>(next_text)) <span style="color:#aaa;font-style:italic"># Save as above</span>
+</span></span></code></pre></div><p>Both <code>&quot;</code> and <code>'</code> can be used to denote strings. If the apostrophe character is part of the string, use <code>&quot;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>example = <span style="color:#a50">&#34;It&#39;s fun to learn Python.&#34;</span>
+</span></span></code></pre></div><h3 id="boolean-bool">Boolean (<code>bool</code>)<a hidden class="anchor" aria-hidden="true" href="#boolean-bool">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a = <span style="color:#00a">True</span>
+</span></span><span style="display:flex;"><span>b = <span style="color:#00a">False</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(<span style="color:#0aa">type</span>(a)) <span style="color:#aaa;font-style:italic"># Check the data type</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(<span style="color:#0aa">type</span>(b)) <span style="color:#aaa;font-style:italic"># Same as above</span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Note that type() function only takes 1 argument, call it separately for each object you want to check</span>
+</span></span></code></pre></div><h3 id="set-set">Set (<code>set</code>)<a hidden class="anchor" aria-hidden="true" href="#set-set">#</a></h3>
+<p>It&rsquo;s a collection of <em>unique</em> items.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fruit = {<span style="color:#a50">&#34;apple&#34;</span>, <span style="color:#a50">&#34;banana&#34;</span>, <span style="color:#a50">&#34;cherry&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(<span style="color:#0aa">type</span>(fruit)) <span style="color:#aaa;font-style:italic"># Check the data type</span>
+</span></span></code></pre></div><p>You can try to assign the same item multiple times to a set, but the printed results only the item once.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Example</span>
+</span></span><span style="display:flex;"><span>fruit = {<span style="color:#a50">&#34;apple&#34;</span>, <span style="color:#a50">&#34;apple&#34;</span>, <span style="color:#a50">&#34;banana&#34;</span>, <span style="color:#a50">&#34;cherry&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(fruit)
+</span></span></code></pre></div><p>You can turn a list into a set:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_list = [<span style="color:#099">1</span>, <span style="color:#099">2</span>, <span style="color:#099">3</span>, <span style="color:#099">4</span>, <span style="color:#099">5</span>, <span style="color:#099">1</span>, <span style="color:#099">3</span>, <span style="color:#099">3</span>, <span style="color:#099">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_set = <span style="color:#0aa">set</span>(my_list)
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(my_set) <span style="color:#aaa;font-style:italic"># Output: {1, 2, 3, 4, 5}</span>
+</span></span></code></pre></div><p>More examples of how you can play around with set:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>s1 = {<span style="color:#099">1</span>, <span style="color:#099">3</span>, <span style="color:#099">1</span>, <span style="color:#099">88</span>, <span style="color:#099">66</span>}
+</span></span><span style="display:flex;"><span>s2 = {<span style="color:#099">8</span>, <span style="color:#099">6</span>, <span style="color:#099">20</span>, <span style="color:#099">7</span>, <span style="color:#099">66</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s1.union(s2) <span style="color:#aaa;font-style:italic"># Output: {1, 3, 6, 7, 8, 20, 66, 88}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s1.intersection(s2) <span style="color:#aaa;font-style:italic"># Output: {66}</span>
+</span></span></code></pre></div><h3 id="list-list">List (<code>list</code>)<a hidden class="anchor" aria-hidden="true" href="#list-list">#</a></h3>
+<p>You can have a list of strings/integers/floats, or a mix of them.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>travel_list = [<span style="color:#a50">&#34;Tokyo&#34;</span>, <span style="color:#a50">&#34;Paris&#34;</span>, <span style="color:#a50">&#34;Beijing&#34;</span>, <span style="color:#a50">&#34;New York&#34;</span>]
+</span></span><span style="display:flex;"><span>age_list = [<span style="color:#099">22</span>, <span style="color:#099">21</span>, <span style="color:#099">25</span>, <span style="color:#099">23</span>]
+</span></span><span style="display:flex;"><span>random_list = [<span style="color:#a50">&#34;Tony&#34;</span>, <span style="color:#099">22</span>, <span style="color:#099">8.5</span>, <span style="color:#a50">&#34;hello&#34;</span>]
+</span></span></code></pre></div><p>Items in a list stay in a fixed order. So you can retrieve specific items by:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>travel_list[<span style="color:#099">0</span>] <span style="color:#aaa;font-style:italic"># Get the first entry which is &#34;Tokyo&#34;</span>
+</span></span><span style="display:flex;"><span>travel_list[:<span style="color:#099">1</span>] <span style="color:#aaa;font-style:italic"># Same output as above (stop at and not include the second entry)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>travel_list[-<span style="color:#099">1</span>] <span style="color:#aaa;font-style:italic"># Get the last entry which is &#34;New York&#34;</span>
+</span></span><span style="display:flex;"><span>travel_list[<span style="color:#099">1</span>:<span style="color:#099">3</span>] <span style="color:#aaa;font-style:italic"># Start and include from the second entry and stop and not include the fourth entry (so &#34;Paris&#34;, &#34;Beijing&#34;)</span>
+</span></span></code></pre></div><p>List items in Python are indexed, and the first item has index [0] (which is different from R).</p>
+<p>In the code above, <code>travel_list[1:3]</code> used the <strong>slicing</strong> operation to extract multiple items in a <em>list</em> at once. Note that this operation works for <em>strings</em> and <em>tuples</em>. <em>Set</em> do not support slicing because they are unordered, and <em>dictionaries</em> cannot be sliced either as they have the key functionality (Python101).</p>
+<p>Suppose there is a list named <code>n</code>, you can slice the list as:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n[start:stop] <span style="color:#aaa;font-style:italic"># Elements from start to &#39;stop - 1&#39;</span>
+</span></span><span style="display:flex;"><span>n[start:] <span style="color:#aaa;font-style:italic"># Elements from start to the end of the list</span>
+</span></span><span style="display:flex;"><span>n[:stop] <span style="color:#aaa;font-style:italic"># Elements from the beginning to &#39;stop - 1&#39;</span>
+</span></span><span style="display:flex;"><span>n[:] <span style="color:#aaa;font-style:italic"># Copy of the whole list (alternative: list.copy())</span>
+</span></span></code></pre></div><p><em>Note</em>: When slicing, the stop point of the slice is <strong>not</strong> included.</p>
+<p>There are two ways to add item(s) to a list.</p>
+<p>Example 1 shows how you can extend a list by using the <code>.extend()</code> method:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_first_list = [<span style="color:#a50">&#34;one&#34;</span>, <span style="color:#a50">&#34;two&#34;</span>, <span style="color:#a50">&#34;three&#34;</span>]
+</span></span><span style="display:flex;"><span>my_second_list = [<span style="color:#a50">&#34;four&#34;</span>, <span style="color:#a50">&#34;five&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_first_list.extend(my_second_list)
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(my_first_list) <span style="color:#aaa;font-style:italic"># Output: [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;, &#39;five&#39;]</span>
+</span></span></code></pre></div><p>Example 2 shows how you can append a list by using the <code>.append()</code> method:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_first_list = [<span style="color:#a50">&#34;one&#34;</span>, <span style="color:#a50">&#34;two&#34;</span>, <span style="color:#a50">&#34;three&#34;</span>]
+</span></span><span style="display:flex;"><span>my_second_list = [<span style="color:#a50">&#34;four&#34;</span>, <span style="color:#a50">&#34;five&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_first_list.append(my_second_list)
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(my_first_list) <span style="color:#aaa;font-style:italic"># Output: [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, [&#39;four&#39;, &#39;five&#39;]]</span>
+</span></span></code></pre></div><p>The major difference between these two list methods is that <code>.extend()</code> adds each item of an iterable to the list, whereas <code>.append()</code> adds a single item or any object.</p>
+<p><strong>Reminder</strong>: don&rsquo;t name your list <code>list</code>.</p>
+<h3 id="dictionary-dict">Dictionary (<code>dict</code>)<a hidden class="anchor" aria-hidden="true" href="#dictionary-dict">#</a></h3>
+<p>A collection of paired keys and values. Duplicates are not allowed.</p>
+<p><em>Note</em>: In Python 3.6 and earlier versions, dictionaries are <em>unordered</em>. However, starting from Python version 3.7, dictionaries are <em>ordered</em>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age_dict = {<span style="color:#a50">&#39;Zeus&#39;</span>: <span style="color:#00a">None</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Denis&#39;</span>: <span style="color:#099">99</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Alice&#39;</span>: <span style="color:#099">18</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Rebecca&#39;</span> : <span style="color:#099">20</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(age_dict) <span style="color:#aaa;font-style:italic"># Print all keys and their values</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(age_dict[<span style="color:#a50">&#34;Zeus&#34;</span>]) <span style="color:#aaa;font-style:italic"># Print the value (age) of Zeus</span>
+</span></span></code></pre></div><p>Similar to <code>list</code>, the values in dictionary items can be of any data type:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>random_dict = {
+</span></span><span style="display:flex;"><span>  <span style="color:#a50">&#34;brand&#34;</span>: <span style="color:#a50">&#34;Coca-Cola&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a50">&#34;diet&#34;</span>: <span style="color:#00a">False</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a50">&#34;year&#34;</span>: <span style="color:#099">2025</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a50">&#34;colors&#34;</span>: [<span style="color:#a50">&#34;red&#34;</span>, <span style="color:#a50">&#34;while&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>An example showing how you can add a key to a dictionary:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age_dict = {<span style="color:#a50">&#39;Zeus&#39;</span>: <span style="color:#00a">None</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Denis&#39;</span>: <span style="color:#099">99</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Alice&#39;</span>: <span style="color:#099">18</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Rebecca&#39;</span> : <span style="color:#099">20</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>age_dict[<span style="color:#a50">&#39;Liam&#39;</span>] = <span style="color:#099">44</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(age_dict) <span style="color:#aaa;font-style:italic"># Output: {&#39;Zeus&#39;: None, &#39;Denis&#39;: 99, &#39;Alice&#39;: 18, &#39;Rebecca&#39;: 20, &#39;Liam&#39;: 44}</span>
+</span></span></code></pre></div><p>You can also change the value of an existing key:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>age_dict = {&#39;Zeus&#39;: None, 
+</span></span><span style="display:flex;"><span>          &#39;Denis&#39;: 99, 
+</span></span><span style="display:flex;"><span>          &#39;Alice&#39;: 18, 
+</span></span><span style="display:flex;"><span>          &#39;Rebecca&#39; : 20}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>age_dict[&#39;Alice&#39;] = 19
+</span></span><span style="display:flex;"><span>print(age_dict) # Output: {&#39;Zeus&#39;: None, &#39;Denis&#39;: 99, &#39;Alice&#39;: 19, &#39;Rebecca&#39;: 20}
+</span></span></code></pre></div><h3 id="tuple-tuple">Tuple (<code>tuple</code>)<a hidden class="anchor" aria-hidden="true" href="#tuple-tuple">#</a></h3>
+<p>Similar to <code>list</code> but it&rsquo;s <em>immutable</em> (i.e., cannot be changed).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>grades = (<span style="color:#099">8</span>, <span style="color:#099">8</span>, <span style="color:#099">7.5</span>, <span style="color:#099">7</span>, <span style="color:#099">9</span>)
+</span></span></code></pre></div><h3 id="bonus-sections-nparrary-and-defaultdict">Bonus sections (<code>np.arrary</code> and <code>defaultdict</code>)<a hidden class="anchor" aria-hidden="true" href="#bonus-sections-nparrary-and-defaultdict">#</a></h3>
+<h4 id="nparrary"><code>np.arrary</code><a hidden class="anchor" aria-hidden="true" href="#nparrary">#</a></h4>
+<p>A list-like datatype provided by the <code>numpy</code> package optimized for efficient mathematical operations (from the slides by Dr. Anne Kroon for the BDACA1). It allows for efficient storage and manipulation of numerical data, making it essential for scientific and mathematical computing - cruicial for performing vectorized operations (Datacamp).</p>
+<p>Some examples from the Datacamp:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">numpy</span> <span style="color:#00a">as</span> <span style="color:#0aa;text-decoration:underline">np</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Basic Array Creation</span>
+</span></span><span style="display:flex;"><span>arr1 = np.array([<span style="color:#099">1</span>, <span style="color:#099">2</span>, <span style="color:#099">3</span>, <span style="color:#099">4</span>, <span style="color:#099">5</span>]) <span style="color:#aaa;font-style:italic"># Create a one-dimensional NumPy array</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Multi-dimensional Array</span>
+</span></span><span style="display:flex;"><span>arr2 = np.array([[<span style="color:#099">1</span>, <span style="color:#099">2</span>, <span style="color:#099">3</span>], [<span style="color:#099">4</span>, <span style="color:#099">5</span>, <span style="color:#099">6</span>]]) <span style="color:#aaa;font-style:italic"># Create a two-dimensional array from a nested list, effectively forming a matrix</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Array with Specified Data Type</span>
+</span></span><span style="display:flex;"><span>arr3 = np.array([<span style="color:#099">1.5</span>, <span style="color:#099">2.5</span>, <span style="color:#099">3.5</span>], dtype=np.int32) <span style="color:#aaa;font-style:italic"># Create a one-dimensional array converting floats to integers</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Using &#39;ndmin&#39; to Add Dimensions</span>
+</span></span><span style="display:flex;"><span>arr = np.array([<span style="color:#099">1</span>, <span style="color:#099">2</span>, <span style="color:#099">3</span>], ndmin=<span style="color:#099">2</span>) <span style="color:#aaa;font-style:italic"># Create a two-dimensional array</span>
+</span></span></code></pre></div><h4 id="defaultdict"><code>defaultdict</code><a hidden class="anchor" aria-hidden="true" href="#defaultdict">#</a></h4>
+<p>A dictionary that does not raise an error but returns the “empty” value of its datatype (0 for int, &quot;&quot; for str) if you try access a non-existing key (from the slides by Dr. Anne Kroon for the BDACA1). It saves you from manually checking for missing keys and avoid <code>KeyError</code>.</p>
+<p>This example from GeeksforGeeks shows how a defaultdict automatically creates missing keys with a default empty list:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">collections</span> <span style="color:#00a">import</span> defaultdict
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>d = defaultdict(<span style="color:#0aa">list</span>) <span style="color:#aaa;font-style:italic"># Define the data type here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>d[<span style="color:#a50">&#39;fruits&#39;</span>].append(<span style="color:#a50">&#39;apple&#39;</span>)
+</span></span><span style="display:flex;"><span>d[<span style="color:#a50">&#39;vegetables&#39;</span>].append(<span style="color:#a50">&#39;carrot&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(d) <span style="color:#aaa;font-style:italic"># Output: defaultdict(&lt;class &#39;list&#39;&gt;, {&#39;fruits&#39;: [&#39;apple&#39;], &#39;vegetables&#39;: [&#39;carrot&#39;]})</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(d[<span style="color:#a50">&#39;juices&#39;</span>]) <span style="color:#aaa;font-style:italic"># Output: []</span>
+</span></span></code></pre></div><p>Anne shared in class that <code>defaultdict</code> is great for storing results and counting things. Here&rsquo;s an example she showed us in her live coding lecture:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">collections</span> <span style="color:#00a">import</span> defaultdict
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_dict = defaultdict(<span style="color:#0aa">int</span>) <span style="color:#aaa;font-style:italic"># Define the data type here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>words = [<span style="color:#a50">&#39;data&#39;</span>, <span style="color:#a50">&#39;python&#39;</span>, <span style="color:#a50">&#39;analyis&#39;</span>, <span style="color:#a50">&#39;nlp&#39;</span>, <span style="color:#a50">&#39;data&#39;</span>, <span style="color:#a50">&#39;data&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> word <span style="color:#00a">in</span> words:
+</span></span><span style="display:flex;"><span>    my_dict[word]+=<span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(my_dict) <span style="color:#aaa;font-style:italic"># Output: defaultdict(&lt;class &#39;int&#39;&gt;, {&#39;data&#39;: 3, &#39;python&#39;: 1, &#39;analyis&#39;: 1, &#39;nlp&#39;: 1})</span>
+</span></span></code></pre></div><p>You can also use a regular <code>dict</code> to replicate the previous output. Compare the code and see which approach you prefer:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_dict = {} <span style="color:#aaa;font-style:italic"># Create an empty dictionary</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>words = [<span style="color:#a50">&#39;data&#39;</span>, <span style="color:#a50">&#39;python&#39;</span>, <span style="color:#a50">&#39;analysis&#39;</span>, <span style="color:#a50">&#39;nlp&#39;</span>, <span style="color:#a50">&#39;data&#39;</span>, <span style="color:#a50">&#39;data&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> word <span style="color:#00a">in</span> words:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> word <span style="color:#00a">in</span> my_dict:
+</span></span><span style="display:flex;"><span>        my_dict[word] += <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>        my_dict[word] = <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(my_dict) <span style="color:#aaa;font-style:italic"># Output: {&#39;data&#39;: 3, &#39;python&#39;: 1, &#39;analyis&#39;: 1, &#39;nlp&#39;: 1}</span>
+</span></span></code></pre></div><h2 id="loops-and-conditional-statements">Loops and conditional statements<a hidden class="anchor" aria-hidden="true" href="#loops-and-conditional-statements">#</a></h2>
+<h3 id="for-loops"><code>for</code>-Loops<a hidden class="anchor" aria-hidden="true" href="#for-loops">#</a></h3>
+<p>The most common types of loops are <em>for</em>, <em>while</em>, and <em>repeat</em>, but we will be mostly concerned with the <code>for</code>-loops (van Atteveldt et al., 2022). The general syntax of <code>for</code>-loops is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">for</span> item <span style="color:#00a">in</span> iterable:
+</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># Code goes here (must be indented!)</span>
+</span></span></code></pre></div><p>An <em>iterable</em> is a fancy word for something that can be iterated over, such as strings, lists, tuples (Python101). Here are some examples:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>numbers = [<span style="color:#099">1</span>,<span style="color:#099">5</span>,<span style="color:#099">7</span>,<span style="color:#099">10</span>,<span style="color:#099">2</span>,<span style="color:#099">4</span>,<span style="color:#099">6</span>]
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> num <span style="color:#00a">in</span> numbers:
+</span></span><span style="display:flex;"><span>    <span style="color:#0aa">print</span>(num+<span style="color:#099">1</span>)
+</span></span></code></pre></div><p>You can loop over dictionaries:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age_dict = {<span style="color:#a50">&#39;Zeus&#39;</span>: <span style="color:#00a">None</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Denis&#39;</span>: <span style="color:#099">99</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Alice&#39;</span>: <span style="color:#099">18</span>, 
+</span></span><span style="display:flex;"><span>          <span style="color:#a50">&#39;Rebecca&#39;</span> : <span style="color:#099">20</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Check the keys in this dictionary</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> k <span style="color:#00a">in</span> age_dict:
+</span></span><span style="display:flex;"><span>    <span style="color:#0aa">print</span>(k)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Check the values in this dictionary</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> v <span style="color:#00a">in</span> age_dict.values():
+</span></span><span style="display:flex;"><span>    <span style="color:#0aa">print</span>(v)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Check the pairs of keys and values in this dictionary</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> k,v <span style="color:#00a">in</span> age_dict.items():
+</span></span><span style="display:flex;"><span>    <span style="color:#0aa">print</span>(k,v)
+</span></span></code></pre></div><h3 id="bonus-list-comprehensions">Bonus: List comprehensions<a hidden class="anchor" aria-hidden="true" href="#bonus-list-comprehensions">#</a></h3>
+<p>List comprehensions are another way of writing <code>for</code>-loops in a single line of code. They&rsquo;re generally faster and can be used for more compact representation of simple interations yielding more readable code (Python101). The general syntax of list comprehensions is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>result_list = [expression <span style="color:#00a">for</span> item <span style="color:#00a">in</span> iterable]
+</span></span></code></pre></div><p>A simple example from the BDACA1 course:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_numbers = [<span style="color:#099">2</span>,<span style="color:#099">1</span>,<span style="color:#099">6</span>,<span style="color:#099">5</span>]
+</span></span><span style="display:flex;"><span>my_squarednumbers = [x**<span style="color:#099">2</span> <span style="color:#00a">for</span> x <span style="color:#00a">in</span> my_numbers]
+</span></span></code></pre></div><p>It is equivalent to:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_numbers = [<span style="color:#099">2</span>,<span style="color:#099">1</span>,<span style="color:#099">6</span>,<span style="color:#099">5</span>]
+</span></span><span style="display:flex;"><span>my_squarednumbers = []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> x <span style="color:#00a">in</span> my_numbers:
+</span></span><span style="display:flex;"><span>    my_squarednumbers.append(x**<span style="color:#099">2</span>)
+</span></span></code></pre></div><h3 id="while-loops"><code>while</code>-Loops<a hidden class="anchor" aria-hidden="true" href="#while-loops">#</a></h3>
+<p>A <code>while</code> loop is a loop that continues until some condition is no longer satisfied (Python101). The general syntax of <code>while</code>-loops is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">while</span> condition: 
+</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># Code goes here (must be indented!)</span>
+</span></span></code></pre></div><p>Here&rsquo;s an example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a = <span style="color:#099">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">while</span> a &lt;=<span style="color:#099">5</span>:
+</span></span><span style="display:flex;"><span>    a += <span style="color:#099">1</span> <span style="color:#aaa;font-style:italic"># The same as: a = a + 1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0aa">print</span>(a) <span style="color:#aaa;font-style:italic"># The output will print integers from 2 to 6</span>
+</span></span></code></pre></div><h3 id="ifelifelse-statements"><code>if</code>/<code>elif</code>/<code>else</code>-Statements<a hidden class="anchor" aria-hidden="true" href="#ifelifelse-statements">#</a></h3>
+<p>The general syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">if</span> condition:
+</span></span><span style="display:flex;"><span>    statement1
+</span></span><span style="display:flex;"><span><span style="color:#00a">elif</span> other_condition:
+</span></span><span style="display:flex;"><span>    statement2
+</span></span><span style="display:flex;"><span><span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>    statement3
+</span></span></code></pre></div><p><em>Note</em>: Your computer only executes the code block if a condition is met.</p>
+<p>A simple example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x=<span style="color:#099">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> x &lt;<span style="color:#099">10</span>:
+</span></span><span style="display:flex;"><span>   <span style="color:#0aa">print</span>(<span style="color:#a50">f</span><span style="color:#a50">&#34;The number is smaller than 10&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00a">elif</span> x &gt; <span style="color:#099">20</span>:
+</span></span><span style="display:flex;"><span>   <span style="color:#0aa">print</span>(<span style="color:#a50">f</span><span style="color:#a50">&#34;The number is greater than 20&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>   <span style="color:#0aa">print</span>(<span style="color:#a50">&#34;No previous condition is met&#34;</span>)
+</span></span></code></pre></div><p>In this example, the output shows: The number is smaller than 10.</p>
+<h3 id="tryexcept-statements">&rsquo;try&rsquo;/&rsquo;except&rsquo;-Statements<a hidden class="anchor" aria-hidden="true" href="#tryexcept-statements">#</a></h3>
+<p>When you have a code block sometimes runs correctly and sometimes not, you should use &rsquo;try&rsquo;/&rsquo;except&rsquo; instead of <code>if</code>/<code>elif</code>/<code>else</code>. The general syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">try</span>:
+</span></span><span style="display:flex;"><span>    statement1
+</span></span><span style="display:flex;"><span><span style="color:#00a">except</span>:
+</span></span><span style="display:flex;"><span>    statement2
+</span></span></code></pre></div><p>An example from the BDACA1 course:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mylist = [<span style="color:#a50">&#34;5&#34;</span>, <span style="color:#099">3</span>, <span style="color:#a50">&#34;whatever&#34;</span>, <span style="color:#099">2.2</span>]
+</span></span><span style="display:flex;"><span>myresults = []
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> x <span style="color:#00a">in</span> mylist:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">try</span>:
+</span></span><span style="display:flex;"><span>        myresults.append(<span style="color:#0aa">int</span>(x))
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">except</span>:
+</span></span><span style="display:flex;"><span>        myresults.append(<span style="color:#00a">None</span>)
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(myresults) <span style="color:#aaa;font-style:italic"># Output: [5, 3, None, 2]</span>
+</span></span></code></pre></div><h2 id="functions-and-methods">Functions and methods<a hidden class="anchor" aria-hidden="true" href="#functions-and-methods">#</a></h2>
+<h3 id="built-in-functions">Built-in functions<a hidden class="anchor" aria-hidden="true" href="#built-in-functions">#</a></h3>
+<p>Built-in functions are predefined by Python developers for users to use. They take an input and return something else. For example, <code>int(32.43)</code> returns the integer 32; <code>len(&quot;Hello&quot;)</code> returns the integer 5 (BDACA1).</p>
+<p>Check out the <a href="https://docs.python.org/3/library/functions.html" target="_blank">Python documentation</a> for a full list of built-in functions. You can also choose your preferred language and Python version.</p>
+<p>Here are some of the most commonly used functions (from the BDACA1):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#0aa">print</span>(x) <span style="color:#aaa;font-style:italic"># something you should definitely know</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">len</span>(x) <span style="color:#aaa;font-style:italic"># returns the length of x</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">int</span>(x) <span style="color:#aaa;font-style:italic"># convert x to an integer</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">str</span>(x) <span style="color:#aaa;font-style:italic"># convert x to a string</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">sum</span>(x) <span style="color:#aaa;font-style:italic"># get the sum of x</span>
+</span></span></code></pre></div><p><strong>f-string</strong> is a handy function which allows you to handle expressions and calculations within strings.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a = <span style="color:#099">5</span>
+</span></span><span style="display:flex;"><span>b = <span style="color:#099">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(<span style="color:#a50">f</span><span style="color:#a50">&#39;Multiplication: a * b = </span><span style="color:#a50">{</span>a<span style="color:#a50">}</span><span style="color:#a50"> * </span><span style="color:#a50">{</span>b<span style="color:#a50">}</span><span style="color:#a50"> = </span><span style="color:#a50">{</span>a*b<span style="color:#a50">}</span><span style="color:#a50">&#39;</span>)
+</span></span></code></pre></div><h3 id="methods">Methods<a hidden class="anchor" aria-hidden="true" href="#methods">#</a></h3>
+<p>Similar to functions, but directly associated with an object. For example, <code>&quot;SCREAM&quot;.lower()</code> returns the string &ldquo;scream&rdquo; (BDACA1).</p>
+<p>Here are some examples of string methods:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_string = <span style="color:#a50">&#34;Hi! How are you?&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Note that you need to print() the following code seperately to return their output (I skipped them in this block)</span>
+</span></span><span style="display:flex;"><span>my_string.lower() <span style="color:#aaa;font-style:italic"># return lowercased string (you need to save it to a new object for later use)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_string.upper() <span style="color:#aaa;font-style:italic"># return uppercased string (same as above)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_string.split() <span style="color:#aaa;font-style:italic"># split on spaces and return a list [&#39;Hi!&#39;, &#39;How&#39;, &#39;are&#39;, &#39;you?&#39;]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_string.replace(<span style="color:#a50">&#34;Hi&#34;</span>, <span style="color:#a50">&#34;Hey&#34;</span>) <span style="color:#aaa;font-style:italic"># replace the old string &#34;Hi&#34; with the new string &#34;Hey&#34; and return &#34;Hey! How are you?&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_string.count(<span style="color:#a50">&#34;H&#34;</span>) <span style="color:#aaa;font-style:italic"># count the number of occurences of the substring &#34;H&#34; inside the string and return 2 (this method is case sensitive, so &#34;h&#34; returns 0)</span>
+</span></span></code></pre></div><p><em>Tip</em>: Type a <code>.</code> after an object and press <strong>Tab</strong> to see all its available methods and properties.</p>
+<h3 id="define-your-own-functions">Define your own functions<a hidden class="anchor" aria-hidden="true" href="#define-your-own-functions">#</a></h3>
+<p>A function is a block of code that is first defined, and thereafter can be called to run as many times as needed (Python101). The general syntax of a function is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">function_name</span>(arg):
+</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># Function code goes here</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># You can have multiple lines of code</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> value <span style="color:#aaa;font-style:italic"># You can return one or more values</span>
+</span></span></code></pre></div><p>An example of writing a simple function (from the BDACA1):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_list = [<span style="color:#099">4</span>, <span style="color:#099">99</span>,<span style="color:#099">5</span>, <span style="color:#099">21</span>]
+</span></span><span style="display:flex;"><span>results = [] <span style="color:#aaa;font-style:italic"># Define an empty list to store the results</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Define the function here which only takes 1 argument        </span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">return_values</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> x &lt; <span style="color:#099">10</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#a50">&#34;SMALLER THAN 10&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">elif</span> x &gt; <span style="color:#099">20</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#a50">&#34;LARGER THAN 20&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Apply the function to the list and store the results in the predefined empty list</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> x <span style="color:#00a">in</span> my_list:
+</span></span><span style="display:flex;"><span>    results.append(return_values(x))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(results) <span style="color:#aaa;font-style:italic"># Output: [&#39;SMALLER THAN 10&#39;, &#39;LARGER THAN 20&#39;, &#39;SMALLER THAN 10&#39;, &#39;LARGER THAN 20&#39;]</span>
+</span></span></code></pre></div><p>You can also use a list comprehension to get the same results:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_list = [<span style="color:#099">4</span>, <span style="color:#099">99</span>,<span style="color:#099">5</span>, <span style="color:#099">21</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Define the function here</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">return_values</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> x &lt; <span style="color:#099">10</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#a50">&#34;SMALLER THAN 10&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">elif</span> x &gt; <span style="color:#099">20</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#a50">&#34;LARGER THAN 20&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>results = [return_values(x) <span style="color:#00a">for</span> x <span style="color:#00a">in</span> my_list] <span style="color:#aaa;font-style:italic"># Apply the function to the list and store the results in a new list</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(results) <span style="color:#aaa;font-style:italic"># Output: [&#39;SMALLER THAN 10&#39;, &#39;LARGER THAN 20&#39;, &#39;SMALLER THAN 10&#39;, &#39;LARGER THAN 20&#39;]</span>
+</span></span></code></pre></div><p>Another example from Anne&rsquo;s live coding lecture:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>random_list = [<span style="color:#a50">&#39;5&#39;</span>, <span style="color:#a50">&#39;aliijog&#39;</span>, <span style="color:#099">10</span>, <span style="color:#099">11</span>]
+</span></span><span style="display:flex;"><span>my_results = []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Define the function here</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">convert_to_int</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#0aa">int</span>(x)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">except</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Apply the function to the result and store it in the predefined new list</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> e <span style="color:#00a">in</span> random_list:
+</span></span><span style="display:flex;"><span>    my_results.append(convert_to_int(e))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(my_results) <span style="color:#aaa;font-style:italic"># Output: [5, None, 10, 11]</span>
+</span></span></code></pre></div><p>Similar to the previous example, you can also do it in a list comprehension:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>random_list = [<span style="color:#a50">&#39;5&#39;</span>, <span style="color:#a50">&#39;aliijog&#39;</span>, <span style="color:#099">10</span>, <span style="color:#099">11</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># Define the function here</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">convert_to_int</span>(x):
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#0aa">int</span>(x)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a">except</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> <span style="color:#00a">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_results = [convert_to_int(x) <span style="color:#00a">for</span> x <span style="color:#00a">in</span> random_list] <span style="color:#aaa;font-style:italic"># Apply the function to the result and store it in a new list</span>
+</span></span><span style="display:flex;"><span><span style="color:#0aa">print</span>(my_results) <span style="color:#aaa;font-style:italic"># Output: [5, None, 10, 11]</span>
+</span></span></code></pre></div><p>As you see, list comprehensions can save more lines of code, but it is up to you to choose which approach you prefer.</p>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<ul>
+<li><a href="https://cssbook.net/" target="_blank">Computational Analysis of Communication</a> (an open-access book written by Prof. Dr. Wouter van Atteveldt, Prof. Dr. Damian Trilling, and Dr. Carlos Arcila)</li>
+<li>Slides and code from the <a href="https://github.com/uvacw/teaching-bdaca/tree/main/6ec-course" target="_blank">BDACA1</a> course</li>
+<li><a href="https://www.w3schools.com/python/python_datatypes.asp" target="_blank">W3School</a></li>
+<li><a href="https://github.com/Python-Crash-Course/Python101/tree/master" target="_blank">Python101</a></li>
+<li><a href="https://www.datacamp.com/doc/numpy/array" target="_blank">Datacamp</a></li>
+<li><a href="https://www.geeksforgeeks.org/python/defaultdict-in-python/" target="_blank">GeeksforGeeks</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+</body>
+</html>

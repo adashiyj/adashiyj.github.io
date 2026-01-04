@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Building Your Own Website 101 (No Stress, Easy Code!) | Yujia (Ada) Shi</title>
+<meta name="keywords" content="">
+<meta name="description" content="In this blog, I share my journey as a web-building newbie creating my first personal website, plus some easy-to-follow resources to get you started too.">
+<meta name="author" content="Ada Shi">
+<link rel="canonical" href="https://adashiyj.github.io/blogs/blog1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1e6f6b9bb4d46b673a3a01d5a6d78d7600d56643a59c30bf80e76c0a7531c3eb.css" integrity="sha256-Hm9rm7TUa2c6OgHVpteNdgDVZkOlnDC/gOdsCnUxw&#43;s=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://adashiyj.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://adashiyj.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://adashiyj.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://adashiyj.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://adashiyj.github.io/blogs/blog1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<link href="/dist/css/lightbox.min.css" rel="stylesheet">
+<script src="/dist/js/lightbox.min.js"></script><meta property="og:url" content="https://adashiyj.github.io/blogs/blog1/">
+  <meta property="og:site_name" content="Yujia (Ada) Shi">
+  <meta property="og:title" content="Building Your Own Website 101 (No Stress, Easy Code!)">
+  <meta property="og:description" content="In this blog, I share my journey as a web-building newbie creating my first personal website, plus some easy-to-follow resources to get you started too.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blogs">
+    <meta property="article:published_time" content="2025-07-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-12T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Building Your Own Website 101 (No Stress, Easy Code!)">
+<meta name="twitter:description" content="In this blog, I share my journey as a web-building newbie creating my first personal website, plus some easy-to-follow resources to get you started too.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://adashiyj.github.io/blogs/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Building Your Own Website 101 (No Stress, Easy Code!)",
+      "item": "https://adashiyj.github.io/blogs/blog1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building Your Own Website 101 (No Stress, Easy Code!)",
+  "name": "Building Your Own Website 101 (No Stress, Easy Code!)",
+  "description": "In this blog, I share my journey as a web-building newbie creating my first personal website, plus some easy-to-follow resources to get you started too.",
+  "keywords": [
+    
+  ],
+  "articleBody": "Sunshine, Gossips, and an Idea After wrapping up my first year of the research master’s in Amsterdam, I flew back to Yunnan, China. This week, I’m staying with my 88-year-old grandma in a tiny village near Lijiang. My days drift by sunbathing with her and soaking up an endless stream of neighborhood gossips and family sagas. Between the sunshine and the stories, though, I find myself growing a bit restless in this sleepy, charmingly uneventful town.\nA few days ago, while searching for potential PhD programs, I stumbled upon some fascinating personal academic websites. I’d never imagined I’d build one myself, but with all this unexpected free time, a thought crossed my mind: Why not give it a shot?\nWhere I Started Like 95% of people would (and no, there’s no scientific reference for that statistic), I turned to Google and typed, “How to build a personal academic website?” Naturally, hundreds of pages popped up. Perfect! Just like doing research: there’s plenty of data out there, and the next step is to take a bottom-up approach. What’s next? Sift through it all, see what’s out there, and summarize the options. Sounds good in theory, right? But am I really going to read every single page? Nee! Luckily, Google’s AI Overview came to the rescue, and here’s what it suggested:\nWebsite builders: Wix, Squarespace, and WordPress offer user-friendly interfaces and templates. Free options: Google Sites, GitHub Pages (with Jekyll or other static site generators). Paid hosting: If you need more advanced features or customization, explore options from companies like GoDaddy or HostGator. As a broke student, the free options caught my eyes right away. I didn’t know what static site generators were, but since I’m already a Git user, I decided to give GitHub Pages a shot (I know this blog sounds like Diary of a Wimpy Kid, please stay tuned!). So I searched “building personal website on GitHub Pages” and found the academic-website topic on GitHub.\nHow I Hosted My Website On GitHub Pages (for Free!) There are a few static site generators where you can use to generate your static websites on GitHub Pages:\nJekyll: a simple, blog-aware, static site generator written in Ruby see more. Hugo: a fast, flexible, static site generator written in Go see more. Others A static site generator is a tool that helps you build a website by turning plain text files (e.g., Markdown) into a complete website with pages, layouts, and links without needing a data base or fancy server setup. Specifically, it’s called “static” because it creates fixed pages (built with HTML, CSS, and JavaScript files) that don’t change each time someone visits (so your site is fast and secure).\nThere are many open-source templates. Mine was forked from Pascal Michaillat’s Minimalist Hugo template for academic websites. The documentation in the repository is super clear and easy-to-follow.\nIn addition, to host your personal website on GitHub Pages safely and get a clean URL like https://yourusername.github.io/ instead of yourusername.github.io/hugo-website/:\n1. Fork the template Fork the website template repository on GitHub to your own account. After forking, follow the template’s instructions to edit the content (e.g., update config files, change text, replace images) so it reflects your personal website. 2. Download GitHub Desktop Install GitHub Desktop. Clone (fetch) your forked repository into a local folder 3. Build your Hugo site Open a terminal (on macOS or Linux) and run:\ncd PATH/TO/YOUR/FORKED/REPO hugo This generates the static site files into a folder called public.\n4. Deploy to GitHub Pages On GitHub, create a new repository named: yourusername.github.io Upload the contents of the public folder into this repo. ⚠️ Important: upload only the contents (HTML, CSS, JS, etc.), not the public folder itself.\n5. Done 🎉 Visit https://yourusername.github.io/ to see your live website. Lastly, remember: your website will only deploy if the hosting repository is public. Sometimes deployment takes a few minutes, so be patient, and if something goes wrong, check the Actions tab to debug any errors in the workflows.\nTada! Easy right? Anyway, I just realized it’s almost 11 PM. I’d better wrap this up before my grandma gets mad. Ciao!\n",
+  "wordCount" : "687",
+  "inLanguage": "en",
+  "datePublished": "2025-07-12T00:00:00Z",
+  "dateModified": "2025-07-12T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Ada Shi"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://adashiyj.github.io/blogs/blog1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yujia (Ada) Shi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://adashiyj.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://adashiyj.github.io/" accesskey="h" title="Ada Shi">
+                <img src="https://adashiyj.github.io/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Ada Shi</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://adashiyj.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://adashiyj.github.io/blogs/" title="Blogs">
+                    <span>Blogs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://adashiyj.github.io/miscellaneous/" title="Miscellaneous">
+                    <span>Miscellaneous</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Building Your Own Website 101 (No Stress, Easy Code!)
+    </h1>
+    <div class="post-meta"><span title='2025-07-12 00:00:00 +0000 UTC'>July 2025</span>&nbsp;&middot;&nbsp;Ada Shi
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#sunshine-gossips-and-an-idea">Sunshine, Gossips, and an Idea</a></li>
+    <li><a href="#where-i-started">Where I Started</a></li>
+    <li><a href="#how-i-hosted-my-website-on-github-pages-for-free">How I Hosted My Website On GitHub Pages (for Free!)</a>
+      <ul>
+        <li><a href="#1-fork-the-template">1. Fork the template</a></li>
+        <li><a href="#2-download-github-desktop">2. Download GitHub Desktop</a></li>
+        <li><a href="#3-build-your-hugo-site">3. Build your Hugo site</a></li>
+        <li><a href="#4-deploy-to-github-pages">4. Deploy to GitHub Pages</a></li>
+        <li><a href="#5-done-">5. Done 🎉</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="sunshine-gossips-and-an-idea">Sunshine, Gossips, and an Idea<a hidden class="anchor" aria-hidden="true" href="#sunshine-gossips-and-an-idea">#</a></h2>
+<p>After wrapping up my first year of the research master’s in Amsterdam, I flew back to Yunnan, China. This week, I’m staying with my 88-year-old grandma in a tiny village near Lijiang. My days drift by sunbathing with her and soaking up an endless stream of neighborhood gossips and family sagas. Between the sunshine and the stories, though, I find myself growing a bit restless in this sleepy, charmingly uneventful town.</p>
+<p>A few days ago, while searching for potential PhD programs, I stumbled upon some fascinating personal academic websites. I’d never imagined I’d build one myself, but with all this unexpected free time, a thought crossed my mind: Why not give it a shot?</p>
+<h2 id="where-i-started">Where I Started<a hidden class="anchor" aria-hidden="true" href="#where-i-started">#</a></h2>
+<p>Like 95% of people would (and no, there’s no scientific reference for that statistic), I turned to Google and typed, “How to build a personal academic website?” Naturally, hundreds of pages popped up. Perfect! Just like doing research: there’s plenty of data out there, and the next step is to take a bottom-up approach. What’s next? Sift through it all, see what’s out there, and summarize the options. Sounds good in theory, right? But am I really going to read every single page? Nee! Luckily, Google’s AI Overview came to the rescue, and here’s what it suggested:</p>
+<ul>
+<li>Website builders: Wix, Squarespace, and WordPress offer user-friendly interfaces and templates.</li>
+<li>Free options: Google Sites, GitHub Pages (with Jekyll or other static site generators).</li>
+<li>Paid hosting: If you need more advanced features or customization, explore options from companies like GoDaddy or HostGator.</li>
+</ul>
+<p>As a broke student, the free options caught my eyes right away. I didn’t know what static site generators were, but since I&rsquo;m already a Git user, I decided to give GitHub Pages a shot (I know this blog sounds like Diary of a Wimpy Kid, please stay tuned!). So I searched “building personal website on GitHub Pages” and found the <a href="https://github.com/topics/academic-website" target="_blank">academic-website</a> topic on GitHub.</p>
+<h2 id="how-i-hosted-my-website-on-github-pages-for-free">How I Hosted My Website On GitHub Pages (for Free!)<a hidden class="anchor" aria-hidden="true" href="#how-i-hosted-my-website-on-github-pages-for-free">#</a></h2>
+<p>There are a few static site generators where you can use to generate your static websites on GitHub Pages:</p>
+<ul>
+<li>Jekyll: a simple, blog-aware, static site generator written in Ruby <a href="https://jekyllrb.com/" target="_blank">see more</a>.</li>
+<li>Hugo: a fast, flexible, static site generator written in Go <a href="https://gohugo.io/" target="_blank">see more</a>.</li>
+<li><a href="https://github.com/collections/static-site-generators" target="_blank">Others</a></li>
+</ul>
+<p>A <em><strong>static site generator</strong></em> is a tool that helps you build a website by turning plain text files (e.g., Markdown) into a complete website with pages, layouts, and links without needing a data base or fancy server setup. Specifically, it’s called &ldquo;static&rdquo; because it creates fixed pages (built with HTML, CSS, and JavaScript files) that don’t change each time someone visits (so your site is fast and secure).</p>
+<p>There are many open-source templates. Mine was forked from Pascal Michaillat&rsquo;s <a href="https://github.com/pmichaillat/hugo-website" target="_blank">Minimalist Hugo template for academic websites</a>. The documentation in the repository is super clear and easy-to-follow.</p>
+<p>In addition, to host your personal website on GitHub Pages safely and get a clean URL like <code>https://yourusername.github.io/</code> instead of <code>yourusername.github.io/hugo-website/</code>:</p>
+<h3 id="1-fork-the-template">1. Fork the template<a hidden class="anchor" aria-hidden="true" href="#1-fork-the-template">#</a></h3>
+<ul>
+<li>Fork the website template repository on GitHub to your own account.</li>
+<li>After forking, follow the template’s instructions to <strong>edit the content</strong> (e.g., update config files, change text, replace images) so it reflects your personal website.</li>
+</ul>
+<h3 id="2-download-github-desktop">2. Download GitHub Desktop<a hidden class="anchor" aria-hidden="true" href="#2-download-github-desktop">#</a></h3>
+<ul>
+<li>Install <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a>.</li>
+<li>Clone (fetch) your forked repository into a local folder</li>
+</ul>
+<h3 id="3-build-your-hugo-site">3. Build your Hugo site<a hidden class="anchor" aria-hidden="true" href="#3-build-your-hugo-site">#</a></h3>
+<p>Open a terminal (on macOS or Linux) and run:</p>
+<ul>
+<li><code>cd PATH/TO/YOUR/FORKED/REPO</code></li>
+<li><code>hugo</code></li>
+</ul>
+<p>This generates the static site files into a folder called public.</p>
+<h3 id="4-deploy-to-github-pages">4. Deploy to GitHub Pages<a hidden class="anchor" aria-hidden="true" href="#4-deploy-to-github-pages">#</a></h3>
+<ul>
+<li>On GitHub, create a new repository named: <code>yourusername.github.io</code></li>
+<li>Upload the contents of the public folder into this repo.</li>
+</ul>
+<p>⚠️ Important: upload only the contents (HTML, CSS, JS, etc.), not the public folder itself.</p>
+<h3 id="5-done-">5. Done 🎉<a hidden class="anchor" aria-hidden="true" href="#5-done-">#</a></h3>
+<ul>
+<li>Visit <a href="https://yourusername.github.io/" target="_blank">https://yourusername.github.io/</a> to see your live website.</li>
+</ul>
+<p>Lastly, remember: your website will only deploy if the hosting repository is public. Sometimes deployment takes a few minutes, so be patient, and if something goes wrong, check the <code>Actions</code> tab to debug any errors in the workflows.</p>
+<p><strong>Tada! Easy right?</strong> Anyway, I just realized it’s almost 11 PM. I’d better wrap this up before my grandma gets mad. Ciao!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+</body>
+</html>

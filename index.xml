@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Yujia (Ada) Shi</title>
+    <link>https://adashiyj.github.io/</link>
+    <description>Recent content on Yujia (Ada) Shi</description>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://adashiyj.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🔍 ASCoR Supervisor Finder App</title>
+      <link>https://adashiyj.github.io/projects/project2/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://adashiyj.github.io/projects/project2/</guid>
+      <description>&lt;script&gt;
+  window.location.href = &#34;https://ascor-supervisor-finder.streamlit.app/&#34;;
+&lt;/script&gt;</description>
+    </item>
+    <item>
+      <title>Robots and Social Influence</title>
+      <link>https://adashiyj.github.io/projects/project1/</link>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://adashiyj.github.io/projects/project1/</guid>
+      <description>I followed this project for my master’s internship, which aimed to investigate whether social robots, acting as exemplars, can influence people’s assessments and evaluations.</description>
+    </item>
+    <item>
+      <title>Back to Basics: Learning Python from Scratch – Part 1</title>
+      <link>https://adashiyj.github.io/blogs/blog3/</link>
+      <pubDate>Sun, 09 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://adashiyj.github.io/blogs/blog3/</guid>
+      <description>Main topics of this blog: data types, loops and conditional statements, and functions and methods.</description>
+    </item>
+    <item>
+      <title>Top Venues for Human–Robot Interaction (HRI) Research</title>
+      <link>https://adashiyj.github.io/blogs/blog2/</link>
+      <pubDate>Sun, 03 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://adashiyj.github.io/blogs/blog2/</guid>
+      <description>A quick guide to where people publish HRI research, from core conferences to interdisciplinary journals. Written while preparing for PhD applications.</description>
+    </item>
+    <item>
+      <title>Building Your Own Website 101 (No Stress, Easy Code!)</title>
+      <link>https://adashiyj.github.io/blogs/blog1/</link>
+      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://adashiyj.github.io/blogs/blog1/</guid>
+      <description>In this blog, I share my journey as a web-building newbie creating my first personal website, plus some easy-to-follow resources to get you started too.</description>
+    </item>
+    <item>
+      <title>Miscellaneous</title>
+      <link>https://adashiyj.github.io/miscellaneous/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://adashiyj.github.io/miscellaneous/</guid>
+      <description>A brief introduction of myself.</description>
+    </item>
+  </channel>
+</rss>
